@@ -23,20 +23,18 @@ const employeeSchema = new mongoose.Schema({
         type: String,
          required: true
     },
-    course: {
+    course: [{
         type: String,
          required: true
-    },
+    }],
     create_date: {
         type: String,
         default: new Date().toLocaleString()
     },
     image: {
-        type: Object,
-        default: {
-            url: "https://tse4.mm.bing.net/th?id=OIP.KtahHX0mDy-mEQO16gKJdAAAAA&pid=Api&P=0&h=180"
-        }
-    },
+        type: String,
+       
+    }
 }, {
     collection: "employes",
     timestamps: true

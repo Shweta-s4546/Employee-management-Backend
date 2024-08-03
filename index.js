@@ -18,7 +18,8 @@ app.use(cors())
 app.use(`/api/admin`, require('./route/adminRoute'))
 app.use(`/api/employee`, require('./route/employeeRoute'))
 
-
+const path = require('path');
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 //path not found
 app.all(`/**`, (req,res) => {
     return res.status(404).json({ msg : "requested path not found"})
